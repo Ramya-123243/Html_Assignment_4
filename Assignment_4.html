@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        .form-row {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .form-row label {
+            width: 180px;
+            display: inline-block;
+        }
+        .form-row input[type="text"],
+        .form-row input[type="email"],
+        .form-row input[type="tel"],
+        .form-row input[type="password"],
+        .form-row textarea,
+        .form-row select {
+            width: 250px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .form-row textarea {
+            height: 60px;
+        }
+        .required:after {
+            content: "*";
+            color: red;
+        }
+        .checkbox-group {
+            margin-top: 5px;
+        }
+        .checkbox-item {
+            margin-right: 15px;
+            display: inline-block;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons input {
+            padding: 8px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Job Application Form</h1>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <!-- Personal Information -->
+        <fieldset>
+            <legend>Personal Information</legend>
+            <div class="form-row">
+                <label for="firstName" class="required">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-row">
+                <label for="lastName" class="required">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-row">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+            <div class="form-row">
+                <label>Gender</label>
+                <div>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="profilePic" class="required">Profile Picture</label>
+                <input type="file" id="profilePic" name="profilePic" required>
+            </div>
+        </fieldset>
+
+        <!-- Contact Information -->
+        <fieldset>
+            <legend>Contact Information</legend>
+            <div class="form-row">
+                <label for="email" class="required">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-row">
+                <label for="phone" class="required">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="10-digit number" required>
+            </div>
+            <div class="form-row">
+                <label for="address">Address</label>
+                <textarea id="address" name="address"></textarea>
+            </div>
+            <div class="form-row">
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="india" selected>India</option>
+                    <option value="usa">USA</option>
+                    <option value="uk">UK</option>
+                    <option value="canada">Canada</option>
+                    <option value="australia">Australia</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <!-- Education Background -->
+        <fieldset>
+            <legend>Education Background</legend>
+            <div class="form-row">
+                <label for="qualification">Highest Qualification</label>
+                <select id="qualification" name="qualification">
+                    <option value="graduate" selected>Graduate</option>
+                    <option value="postgraduate">Post Graduate</option>
+                    <option value="doctorate">Doctorate</option>
+                    <option value="undergraduate">Undergraduate</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="specialization">Specialization</label>
+                <input type="text" id="specialization" name="specialization">
+            </div>
+            <div class="form-row">
+                <label for="graduationYear">Year of Graduation</label>
+                <input type="number" id="graduationYear" name="graduationYear" min="1950" max="2025">
+            </div>
+        </fieldset>
+
+        <!-- Job Preferences -->
+        <fieldset>
+            <legend>Job Preferences</legend>
+            <div class="form-row">
+                <label for="preferredRole">Preferred Role</label>
+                <input type="text" id="preferredRole" name="preferredRole">
+            </div>
+            <div class="form-row">
+                <label for="expectedSalary">Expected Salary</label>
+                <input type="text" id="expectedSalary" name="expectedSalary">
+            </div>
+            <div class="form-row">
+                <label>Preferred Locations</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="bangalore" name="locations[]" value="bangalore">
+                        <label for="bangalore">Bangalore</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="delhi" name="locations[]" value="delhi">
+                        <label for="delhi">Delhi</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="remote" name="locations[]" value="remote">
+                        <label for="remote">Remote</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="pune" name="locations[]" value="pune">
+                        <label for="pune">Pune</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="relocate">Willing to Relocate?</label>
+                <input type="checkbox" id="relocate" name="relocate" value="yes">
+            </div>
+        </fieldset>
+
+        <!-- Create Account -->
+        <fieldset>
+            <legend>Create Account</legend>
+            <div class="form-row">
+                <label for="password" class="required">Password</label>
+                <input type="password" id="password" name="password" placeholder="Min 6 characters" required>
+            </div>
+            <div class="form-row">
+                <label for="confirmPassword" class="required">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+        </fieldset>
+
+        <!-- Resume -->
+        <fieldset>
+            <legend>Resume</legend>
+            <div class="form-row">
+                <label for="resume" class="required">Upload Resume (PDF only)</label>
+                <input type="file" id="resume" name="resume" accept=".pdf" required>
+            </div>
+        </fieldset>
+
+        <!-- Agreement -->
+        <fieldset>
+            <legend>Agreement</legend>
+            <div class="form-row">
+                <input type="checkbox" id="agreement" name="agreement" required>
+                <label for="agreement" class="required">I agree to the terms and conditions</label>
+            </div>
+        </fieldset>
+
+        <div class="buttons">
+            <input type="submit" value="Submit Application">
+            <input type="reset" value="Reset Form">
+        </div>
+    </form>
+</body>
+</html>
